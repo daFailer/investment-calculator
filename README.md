@@ -1,4 +1,6 @@
 # Investment Calculator
+[![Build Status](https://drone.maniacbox.synology.me/api/badges/daFailer/investment-calculator/status.svg?ref=refs/heads/main)](https://drone.maniacbox.synology.me/daFailer/investment-calculator)
+
 This project is an investment calculator web application built with React and Vite. It was developed as part of a Udemy course to demonstrate modern web development practices. The application allows users to calculate investment returns over time, taking into account factors like initial investment, annual contribution, expected return rate, and investment duration.
 
 The project uses:
