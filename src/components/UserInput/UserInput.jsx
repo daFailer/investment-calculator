@@ -9,7 +9,6 @@ const UserInput = ({ investmentData, handleChange }) => {
           <input
             id="initialInvestment"
             type="number"
-            min="0"
             required
             value={investmentData.initialInvestment} onChange={handleChange}
           />
@@ -19,7 +18,6 @@ const UserInput = ({ investmentData, handleChange }) => {
           <input
             id="annualInvestment"
             type="number"
-            min="0"
             required
             value={investmentData.annualInvestment} onChange={handleChange}
           />
@@ -31,7 +29,6 @@ const UserInput = ({ investmentData, handleChange }) => {
           <input
             id="expectedReturn"
             type="number"
-            min="0"
             required
             step=".1" value={investmentData.expectedReturn} onChange={handleChange}
           />
@@ -41,7 +38,7 @@ const UserInput = ({ investmentData, handleChange }) => {
           <input
             id="duration"
             type="number"
-            min="0"
+            min="1"
             required
             value={investmentData.duration} onChange={handleChange}
           />
