@@ -2,28 +2,52 @@ import './userInput.css'
 
 const UserInput = ({ investmentData, handleChange }) => {
   return (
-    <div id="user-input">
+    <section id="user-input">
       <div className="input-group">
-        <div>
+        <p>
           <label htmlFor="initialInvestment">Initial Investment</label>
-          <input id="initialInvestment" type="number" min="0" value={investmentData.initialInvestment} onChange={handleChange}/>
-        </div>
-        <div>
+          <input
+            id="initialInvestment"
+            type="number"
+            min="0"
+            required
+            value={investmentData.initialInvestment} onChange={handleChange}
+          />
+        </p>
+        <p>
           <label htmlFor="annualInvestment">Annual Investment</label>
-          <input id="annualInvestment" type="number" min="0" value={investmentData.annualInvestment} onChange={handleChange}/>
-        </div>
+          <input
+            id="annualInvestment"
+            type="number"
+            min="0"
+            required
+            value={investmentData.annualInvestment} onChange={handleChange}
+          />
+        </p>
       </div>
       <div className="input-group">
-        <div>
+        <p>
           <label htmlFor="expectedReturn">Expected Return</label>
-          <input id="expectedReturn" type="number" min="0" step=".1" value={investmentData.expectedReturn} onChange={handleChange}/>
-        </div>
-        <div>
+          <input
+            id="expectedReturn"
+            type="number"
+            min="0"
+            required
+            step=".1" value={investmentData.expectedReturn} onChange={handleChange}
+          />
+        </p>
+        <p>
           <label htmlFor="duration">Duration</label>
-          <input id="duration" type="number" min="0" value={investmentData.duration} onChange={handleChange}/>
-        </div>
+          <input
+            id="duration"
+            type="number"
+            min="0"
+            required
+            value={investmentData.duration} onChange={handleChange}
+          />
+        </p>
       </div>
-    </div>
+    </section>
   )
 }
 

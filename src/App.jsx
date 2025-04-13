@@ -14,16 +14,18 @@ function App() {
 
   const updateInvestmentData = (e) => {
     const target = e.target;
-    const newInvestment = {...investmentData};
     let userInput = target.value;
 
     if (target.id !== 'expectedReturn') {
       userInput = parseInt(userInput)
     }
 
-    newInvestment[target.id] = userInput;
-
-    setInvestmentData(newInvestment);
+    setInvestmentData((prevInvestmentData) => {
+      return {
+        ...prevInvestmentData,
+        [target.id]: userInput,
+      }
+    });
   }
 
   return (
