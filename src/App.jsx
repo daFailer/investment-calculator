@@ -1,12 +1,33 @@
-import Header from './components/Header/Header'
-import UserInput from './components/UserInput/UserInput'
-import Result from './components/Result/Result'
+import Header from './components/Header/Header';
+import UserInput from './components/UserInput/UserInput';
+import Result from './components/Result/Result';
+
+import { useState } from 'react';
 
 function App() {
+  const [investmentData, setInvestmentData] = useState({
+    initialInvestment: 10000,
+    annualInvestment: 1200,
+    expectedReturn: 6,
+    duration: 10,
+  });
+
+  const updateInvestmentData = (e) => {
+    const target = e.target;
+    
+    const newInvestment = {...investmentData};
+    newInvestment[target.id] = target.value;
+
+    setInvestmentData(newInvestment);
+  }
+
   return (
     <>
       <Header />
-      <UserInput />
+      <UserInput
+        investmentData={investmentData}
+        handleChange={updateInvestmentData}
+      />
       <Result />
     </>
   )
