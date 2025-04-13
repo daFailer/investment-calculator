@@ -1,9 +1,11 @@
 import './header.css';
 
+import logo from '../../assets/investment-calculator-logo.png';
+
 const Header = () => {
   return (
     <div id="header">
-      <img src="investment-calculator-logo.png" alt="investment-calculator-logo.png logo" />
+      <img src={logo} alt="Logo showing a money bag" />
       <h1>Investment Calculator</h1>
     </div>
   )
