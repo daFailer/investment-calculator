@@ -14,9 +14,14 @@ function App() {
 
   const updateInvestmentData = (e) => {
     const target = e.target;
-    
     const newInvestment = {...investmentData};
-    newInvestment[target.id] = target.value;
+    let userInput = target.value;
+
+    if (target.id !== 'expectedReturn') {
+      userInput = parseInt(userInput)
+    }
+
+    newInvestment[target.id] = userInput;
 
     setInvestmentData(newInvestment);
   }
@@ -28,7 +33,7 @@ function App() {
         investmentData={investmentData}
         handleChange={updateInvestmentData}
       />
-      <Result />
+      <Result investmentData={investmentData} />
     </>
   )
 }

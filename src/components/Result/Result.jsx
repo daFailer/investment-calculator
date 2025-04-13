@@ -1,6 +1,11 @@
 import './result.css';
 
-const Result = () => {
+import { calculateInvestmentResults, formatter } from '../../util/investment';
+
+const Result = ({ investmentData }) => {
+  const investmentResults = calculateInvestmentResults(investmentData);
+  let totalInterest = 0;
+
   return (
     <table id="result">
       <thead>
@@ -13,20 +18,19 @@ const Result = () => {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>$16,725</td>
-          <td>$825</td>
-          <td>$825</td>
-          <td>$15,900</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>$18,545</td>
-          <td>$920</td>
-          <td>$1,745</td>
-          <td>$16,800</td>
-        </tr>
+        {calculateInvestmentResults(investmentData).map((investment, index) => {
+          totalInterest += investment.interest;
+
+          return (
+            <tr key={investment.year}>
+              <td>{formatter.format(investment.year)}</td>
+              <td>{formatter.format(investment.valueEndOfYear)}</td>
+              <td>{formatter.format(investment.interest)}</td>
+              <td>{formatter.format(totalInterest)}</td>
+              <td>{formatter.format(investment.valueEndOfYear - totalInterest)}</td>
+            </tr>
+          )
+        })}
       </tbody>
     </table>
   )
