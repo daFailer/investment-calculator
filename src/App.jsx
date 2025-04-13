@@ -16,14 +16,10 @@ function App() {
     const target = e.target;
     let userInput = target.value;
 
-    if (target.id !== 'expectedReturn') {
-      userInput = parseInt(userInput)
-    }
-
     setInvestmentData((prevInvestmentData) => {
       return {
         ...prevInvestmentData,
-        [target.id]: userInput,
+        [target.id]: +userInput,
       }
     });
   }
